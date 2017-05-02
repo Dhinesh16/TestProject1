@@ -1,0 +1,32 @@
+<style>
+.loginload.ng-enter,.loginload.ng-leave 
+{
+    background-color: red;        
+    }
+ 
+    
+
+
+</style>
+
+<div layout="row" layout-align="center stretch" class="loginload" flex>
+    <div flex  layout-fill style="background:#00A0B0 " layout="column" layout-align="center center" >
+            <div flex-33> 
+                    <p>  KR Portal </p>
+                    <p>Powered by </p>
+                     <p> </p> 
+            </div>    
+    </div>
+    <div flex=40 layout-fill layout='column' layout-align="center" style="background:  white"  layout="column" layout-align="center center" >
+        <div flex-33 layout-padding  >
+             <md-input-container class="md-block">
+                 <label>First name</label>
+            <input type="text" name="username" ng-model="username" ng-change="validateCredentials()" >
+             </md-input-container>
+             <md-input-container class="md-block">
+                 <label>Password</label>
+            <input type="password" name="password" ng-model="password" ng-change="validateCredentials()">
+             </md-input-container>
+        </div>    
+    </div>
+</div>

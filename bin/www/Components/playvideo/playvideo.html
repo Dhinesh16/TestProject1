@@ -1,0 +1,40 @@
+<section flex layout-padding layout="column" class="nopaddingTop">
+    <md-card flex="70">   
+        <md-card-content> 
+            <video  controls   autoplay>
+                <source src="/video/VS2017.mp4" type="video/mp4" autoplay></source>
+          </video>
+          </md-card-content>
+    </md-card>   
+    <md-card flex="30">   
+        <md-card-title> Title goes here </md-card-title>
+        <md-card-content layout="column">
+        <section layout="row"> 
+                
+        <md-input-container  flex="100">
+        <label>Leave your comments here</label>
+        <textarea  ng-model="user.comment" rows=3 type="text"> </textarea >
+         </md-input-container>
+         <md-button >
+             Post 
+         </md-button>>
+         </section> 
+         <md-divider></md-divider>
+         <div>
+             <md-list>
+                 <md-icon> </md-icon>
+                  </md-list>
+         </div>    
+        </md-card-content> 
+    </md-card>
+ <!--<div width="100%" flex="60">  
+ <md-card   class="noMarginTop" >     
+    <md-card-content>
+        <video  controls  height="100%" width="100%" autoplay>
+        <source src="/video/VS2017.mp4" type="video/mp4" autoplay>
+          </video>
+    </md-card-content>
+</md-card>
+</div>-->
+  
+</section>

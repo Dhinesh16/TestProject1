@@ -1,0 +1,238 @@
+
+    <style>
+        @media only screen and (min-width: 960px) {
+            /* For mobile phones: */
+            .sideVideoCard {
+                height: 100px;
+            }
+
+            .sideNavVideoHeader {
+                color: #333;
+                
+                font-weight: 500;
+                text-align: left;
+            }
+            .mdCardHeader
+            {
+                padding-top: 4px;
+            }
+            md-sidenav
+            {
+                width:100% !important;
+            }
+            .paddingTop
+            {
+                padding-top:10px !important;
+            }
+            .nopaddingTop
+            {
+                padding-top:0px !important;
+            }
+            .noMarginTop
+            {
+                margin-top:0px !important;
+            }
+        }
+
+        @font-face {
+                font-family: 'Material Icons';
+                font-style: normal;
+                font-weight: 400;
+                
+                src: local('Material Icons'),
+                    local('MaterialIcons-Regular'),
+                    url(fonts/MaterialIcons-Regular.woff) format('woff');
+                    
+            }
+                a[ng-click]{
+    cursor: pointer;
+}
+             .material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}   
+        .sideNavVideoContent {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .videoImage {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .green {
+            border: 1px;
+        }
+
+        .gridListdemoBasicUsage md-grid-list {
+            margin: 8px;
+        }
+
+        .gridListdemoBasicUsage .red {
+            background: #ff8a80;
+        }
+
+        .gridListdemoBasicUsage md-grid-tile {
+            transition: all 400ms ease-out 50ms;
+        }
+
+        .navText {
+            text-align: left;
+        }
+
+            video {
+            width: 100%    !important;
+            height: auto   !important;
+        }
+ /* BREADCRUMB */
+.breadcrumb {
+  float: left;
+  width: 100%;
+  background: #e8e8e8;
+  margin-bottom: 10px;
+  padding: 6px 0px   7px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+.breadcrumb li,
+.breadcrumb li a {
+  font-size: 11px;
+  line-height: 12px;
+  color: #99a0aa;
+  text-decoration: none;
+  display: inline;
+}
+.breadcrumb li:hover,
+.breadcrumb li a:hover {
+  color: #656d78;
+}
+.breadcrumb li:last-child {
+  color: #656d78;
+}
+.breadcrumb > li + li:before {
+  font-family: "FontAwesome";
+  content: "\f105";
+  color: #99a0aa;
+  padding: 0px 8px;
+}
+
+            .animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  transition:all linear 0.5s;
+}
+
+    .animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;
+}
+
+          md-grid-list {
+  margin: 8px; }   
+  md-grid-tile > figure
+  {
+        overflow: hidden;
+  }
+  video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+    </style>
+    <section flex layout="column">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+
+                <md-button class="md-icon-button" hide-gt-md aria-label="Log out">
+                    <md-icon>
+                        <i class="material-icons">menu</i>
+                    </md-icon>
+                </md-button>
+
+                <h3 flex>  KR Portal </h3>
+                <md-button class="md-icon-button" aria-label="Log out">
+                    <md-icon>
+                        <i class="material-icons">power_settings_new</i>
+                    </md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-content layout="row" flex>
+            
+
+                <div ui-view flex layout-padding layout="column" class="paddingTop"> </div>
+
+            <div flex="30" layout="column" class="paddingTop">
+                <md-sidenav flex layout="column" md-is-locked-open=true class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+                    <md-subheader class="md-primary" style="text-align: center">Category</md-subheader>
+                    <div>
+                        <ul class="breadcrumb" ng-if="selectedMenuID" >
+                            <li ng-repeat="bread in breadCrumList">
+                                <a href="#" ng-click="menuItemClicked(bread)">{{bread.text}}</a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <md-button ng-repeat="item in selectedMenu | filter:{IsMenu:'Y'} " class="navText animate-repeat" ng-click="menuItemClicked(item)">
+                        {{item.Text}}
+                    </md-button>
+                    <md-divider></md-divider>
+                    <md-content layout="column">
+                        <md-list>
+                            <div ng-repeat="item in selectedMenu | filter:{IsMenu:'N'} ">
+                            <md-card class="md-card sideVideoCard" layout="row"  style="padding-top: 4px;padding-bottom: 4px;">
+                                    <div style='text-align:center;background-image: url({{item.img}});background-repeat:no-repeat;background-size: cover;width:100%;height:100% ' id="mainpage" align="center"> </div>
+                                <md-card-header class="mdCardHeader" flex="60">
+                                    <md-card-header-text class="">
+                                               <span class="sideNavVideoHeader">   <a ng-click="playvideo(item)"> {{item.Text}} </a> </span>
+                                    </md-card-header-text>
+                                </md-card-header>
+                            </md-card>
+                            <md-divider></md-divider>
+                                 </div>
+                        </md-list>
+                    </md-content>
+                    
+          <md-subheader class="md-primary" style="text-align: center">Miscellaneous</md-subheader>
+                </md-sidenav>
+
+        </md-content>
+</div>
+</section>

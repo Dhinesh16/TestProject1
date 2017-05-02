@@ -1,0 +1,24 @@
+ <md-content flex layout="column" class="nopaddingTop">
+     <md-card flex>
+           <md-card-title-text style="text-align: center">
+            <span class="md-headline">Molina Process</span>
+          </md-card-title-text> 
+        <md-card-content> 
+
+        <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+      <md-nav-item md-nav-click="goto('page1')" name="page1">Vidoes</md-nav-item>
+      <md-nav-item md-nav-click="goto('page2')" name="page2">Documents</md-nav-item>
+      
+      <!-- these require actual routing with ui-router or ng-route, so they won't work in the demo
+      <md-nav-item md-nav-sref="app.page4" name="page4">Page Four</md-nav-item>
+      <md-nav-item md-nav-href="#page5" name="page5">Page Five</md-nav-item>
+      -->
+    </md-nav-bar>
+    <div class="ext-content" flex>
+        <md-section>
+            
+        </md-section>    
+    </div>
+    </md-card-content>
+    </md-card>
+  </md-content>
